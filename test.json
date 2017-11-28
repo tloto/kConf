@@ -1,0 +1,6 @@
+{
+  "compilerOptions": {
+    "module": "test",
+    "language":"golang"
+  }
+}
