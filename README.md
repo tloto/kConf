@@ -21,7 +21,7 @@ func init(){
 }
 
 func main() {
-	str := GetConfString("compilerOptions.module")
+	str := kConf.GetConfString("compilerOptions.module")
 	fmt.println(str)
 }
 ```
