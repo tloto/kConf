@@ -23,13 +23,13 @@ func GetFileContentWithPath(path string) ([]byte,error) {
 		if er == io.EOF {
 		   break
 		}
-		index := bytes.IndexByte(b,0)
-		if index < 1 {
-		   break
-		}
-		resultData := b[:index]
-		config_DATA=append(config_DATA, resultData...)
+		config_DATA=append(config_DATA, b...)
 	}
 
-	return config_DATA,nil
+	index := bytes.IndexByte(config_DATA,0)
+	if index < 1 {
+	   index = 0
+	}
+	resultData := config_DATA[:index]
+	return resultData,nil
 }
