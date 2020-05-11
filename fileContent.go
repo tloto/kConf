@@ -1,5 +1,6 @@
 package kConf
 import (
+	"bytes"
 	"os"
 	"bufio"
 	"io"
