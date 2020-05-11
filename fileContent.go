@@ -21,9 +21,12 @@ func GetFileContentWithPath(path string) ([]byte,error) {
 		b := make([]byte,1024)
 		_,er :=buffioreader.Read(b)
 		if er == io.EOF {
-			break
+		   break
 		}
 		index := bytes.IndexByte(b,0)
+		if index < 1 {
+		   break
+		}
 		resultData := b[:index]
 		config_DATA=append(config_DATA, resultData...)
 	}
